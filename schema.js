@@ -32,9 +32,11 @@ const LaunchType = new GraphQLObjectType({
   fields: () => ({
     flight_number: { type: GraphQLInt },
     mission_name: { type: GraphQLString },
+    mission_id: { type: new GraphQLList(GraphQLString) },
     launch_year: { type: GraphQLString },
     launch_date_local: { type: GraphQLString },
     launch_success: { type: GraphQLBoolean },
+    land_success: { type: GraphQLBoolean },
     details: { type: GraphQLString },
     links: { type: LaunchLinks },
     rocket: { type: RocketType },
